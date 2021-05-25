@@ -39,8 +39,8 @@ class Socket:
     def accept(self):
         self.sock.listen(5)
         self._connection, self._user_address = self.sock.accept()
-        # data = self._connection.recv(512)
-        # return Request(data).getSmth()
+        data = self._connection.recv(512)
+        return Request(data).getSmth()
 
     def send(self, data: bytes):
         self._connection.send(data)
